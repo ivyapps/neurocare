@@ -5,8 +5,11 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  ImageBackground,
-  useColorScheme
+  Image,
+  Modal,
+  Dimensions,
+  useColorScheme,
+  SafeAreaView
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
@@ -17,6 +20,11 @@ export default function LearnScreen() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme ?? 'light'];
   const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [modalVisible, setModalVisible] = useState(false);
+
+  // We'll use placeholder images until you replace them with actual spectrum chart images
+  const spectrumChartSmall = require('../../assets/images/neurodiversity-spectrum-small.png');
+  const spectrumChartLarge = require('../../assets/images/neurodiversity-spectrum-large.png');
 
   const categories = [
     { id: 'all', label: 'All' },
@@ -65,6 +73,35 @@ export default function LearnScreen() {
         </Text>
       </View>
 
+      {/* Neurodiversity Spectrum Chart */}
+      <View style={styles.chartContainer}>
+        <View style={styles.chartHeader}>
+          <Text style={[styles.chartTitle, { color: colors.text }]}>
+            Neurodiversity Spectrum
+          </Text>
+          <TouchableOpacity style={[styles.infoButton, { backgroundColor: `${colors.primary}20` }]}>
+            <Feather name="info" size={16} color={colors.primary} />
+          </TouchableOpacity>
+        </View>
+
+        {/* Clickable Chart Image */}
+        <TouchableOpacity
+          style={styles.chartImageContainer}
+          activeOpacity={0.9}
+          onPress={() => setModalVisible(true)}
+        >
+          <Image
+            source={spectrumChartSmall}
+            style={styles.chartImage}
+            resizeMode="contain"
+          />
+          <View style={styles.expandHint}>
+            <Feather name="maximize-2" size={16} color="#fff" />
+            <Text style={styles.expandText}>Tap to expand</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+
       {/* Categories */}
       <ScrollView
         horizontal
@@ -96,29 +133,11 @@ export default function LearnScreen() {
         ))}
       </ScrollView>
 
-      {/* Featured Content */}
-      <View style={styles.featuredContainer}>
-        <ImageBackground
-          source={{ uri: 'https://picsum.photos/400/200' }}
-          style={styles.featuredImage}
-          imageStyle={styles.featuredImageStyle}
-        >
-          <View style={styles.featuredOverlay}>
-            <View style={[styles.newBadge, { backgroundColor: colors.primary }]}>
-              <Text style={styles.newBadgeText}>NEW</Text>
-            </View>
-            <Text style={styles.featuredTitle}>Understanding Meltdowns</Text>
-            <Text style={styles.featuredDescription}>Responding with love and support</Text>
-          </View>
-          <TouchableOpacity style={styles.playButton}>
-            <Feather name="play" size={20} color={colors.primary} />
-          </TouchableOpacity>
-        </ImageBackground>
-      </View>
-
       {/* Content List */}
       <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.text }]}>Popular Resources</Text>
+        <Text style={[styles.sectionTitle, { color: colors.text }]}>
+        Helpful Resources
+        </Text>
 
         {resources.map((item, index) => (
           <View key={index} style={[styles.contentItem, { backgroundColor: colors.cardBackground }]}>
@@ -149,9 +168,36 @@ export default function LearnScreen() {
           </View>
         ))}
       </View>
+
+      {/* Modal for expanded chart */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <SafeAreaView style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <TouchableOpacity
+              style={styles.closeButton}
+              onPress={() => setModalVisible(false)}
+            >
+              <Feather name="x" size={24} color="#fff" />
+            </TouchableOpacity>
+            <Image
+              source={spectrumChartLarge}
+              style={styles.expandedImage}
+              resizeMode="contain"
+            />
+            <Text style={styles.modalCaption}>The Neurodiversity Spectrum</Text>
+          </View>
+        </SafeAreaView>
+      </Modal>
     </ScrollView>
   );
 }
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -159,7 +205,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   headerSection: {
-    marginBottom: 16,
+    marginBottom: 12,
   },
   screenTitle: {
     fontSize: 24,
@@ -169,8 +215,93 @@ const styles = StyleSheet.create({
   screenSubtitle: {
     fontSize: 16,
   },
+  // Chart styles
+  chartContainer: {
+    marginBottom: 20,
+  },
+  chartHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  chartTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  infoButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  chartImageContainer: {
+    position: 'relative',
+    width: '100%',
+    height: 160,
+    borderRadius: 12,
+    overflow: 'hidden',
+    backgroundColor: '#f3f4f6',
+  },
+  chartImage: {
+    width: '100%',
+    height: '100%',
+  },
+  expandHint: {
+    position: 'absolute',
+    bottom: 8,
+    right: 8,
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    borderRadius: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  expandText: {
+    color: '#fff',
+    fontSize: 12,
+    marginLeft: 4,
+  },
+  // Modal styles
+  modalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    width: width * 0.9,
+    height: height * 0.7,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    zIndex: 10,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  expandedImage: {
+    width: '100%',
+    height: '90%',
+  },
+  modalCaption: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 16,
+  },
+  // Existing styles
   categoriesContainer: {
-    paddingVertical: 16,
+    paddingVertical: 12,
     gap: 8,
   },
   categoryButton: {
@@ -188,69 +319,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
   },
-  featuredContainer: {
-    height: 180,
-    marginBottom: 24,
-    borderRadius: 16,
-    overflow: 'hidden',
-  },
-  featuredImage: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'flex-end',
-  },
-  featuredImageStyle: {
-    borderRadius: 16,
-  },
-  featuredOverlay: {
-    padding: 16,
-    backgroundColor: 'rgba(0,0,0,0.3)',
-  },
-  newBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 20,
-    alignSelf: 'flex-start',
-    marginBottom: 8,
-  },
-  newBadgeText: {
-    color: '#fff',
-    fontSize: 10,
-    fontWeight: 'bold',
-  },
-  featuredTitle: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  featuredDescription: {
-    color: 'rgba(255,255,255,0.9)',
-    fontSize: 14,
-  },
-  playButton: {
-    position: 'absolute',
-    right: 16,
-    bottom: 16,
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
   section: {
-    marginBottom: 16,
+    marginBottom: 20,
+    marginTop: 8,
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 12,
   },
   contentItem: {
     borderRadius: 12,
@@ -308,5 +384,6 @@ const styles = StyleSheet.create({
   viewButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 4,
   },
 });

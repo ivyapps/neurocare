@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import Colors from '../../constants/Colors';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type SpecialistType = 'all' | 'psychologist' | 'speech' | 'education';
 type Location = 'all' | 'yaounde' | 'douala' | 'bamenda';
@@ -141,18 +142,23 @@ export default function ServicesScreen() {
         ))}
       </View>
 
-      {/* Teleconsultation Banner */}
-      <View style={styles.teleconsultBanner}>
+      {/* Teleconsultation Banner - Updated with brand colors*/}
+      <LinearGradient
+        colors={['#4A969B', '#A370A4']} // Teal to purple gradient matching logo colors
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}
+        style={styles.teleconsultBanner}
+      >
         <Text style={styles.teleconsultTitle}>Online Consultation</Text>
         <Text style={styles.teleconsultDescription}>
           Connect with specialists remotely from anywhere in Cameroon.
         </Text>
         <TouchableOpacity style={styles.teleconsultButton}>
-          <Text style={[styles.teleconsultButtonText, { color: colors.primary }]}>
+          <Text style={[styles.teleconsultButtonText, { color: '#4A969B' }]}>
             Find Online Services
           </Text>
         </TouchableOpacity>
-      </View>
+      </LinearGradient>
     </ScrollView>
   );
 }
@@ -295,7 +301,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   teleconsultBanner: {
-    backgroundColor: '#0ea5e9',
     borderRadius: 12,
     padding: 16,
     marginBottom: 24,

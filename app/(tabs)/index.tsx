@@ -71,64 +71,7 @@ export default function HomeScreen() {
           ))}
         </View>
       </View>
-
-      {/* Recommended Section */}
-      <View style={styles.section}>
-        <View style={styles.sectionHeader}>
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>Recommended</Text>
-          <TouchableOpacity>
-            <Text style={{ color: colors.primary }}>See All</Text>
-          </TouchableOpacity>
-        </View>
-
-        {[
-          {
-            title: "Understanding Autism",
-            type: "Podcast",
-            duration: "8 min",
-            language: "English",
-            icon: "play"
-          },
-          {
-            title: "Sensory Activities at Home",
-            type: "Guide",
-            duration: "5 min read",
-            language: "French",
-            icon: "book-open"
-          },
-          {
-            title: "Communication Techniques",
-            type: "Video",
-            duration: "12 min",
-            language: "Pidgin",
-            icon: "play"
-          }
-        ].map((item, index) => (
-          <View key={index} style={[styles.recommendedItem, { backgroundColor: colors.cardBackground }]}>
-            <View style={styles.recommendedItemHeader}>
-              <View style={[styles.smallIconContainer, { backgroundColor: `${colors.primary}20` }]}>
-                <Feather name={item.icon as any} size={18} color={colors.primary} />
-              </View>
-              <View style={styles.recommendedItemContent}>
-                <View style={styles.metaContainer}>
-                  <Text style={[styles.metaText, { color: colors.muted }]}>{item.type}</Text>
-                  <View style={[styles.dot, { backgroundColor: colors.muted }]} />
-                  <Text style={[styles.metaText, { color: colors.muted }]}>{item.duration}</Text>
-                </View>
-                <Text style={[styles.itemTitle, { color: colors.text }]}>{item.title}</Text>
-              </View>
-            </View>
-            <View style={styles.recommendedItemFooter}>
-              <View style={styles.languageTag}>
-                <Text style={styles.languageText}>{item.language}</Text>
-              </View>
-              <TouchableOpacity>
-                <Text style={{ color: colors.primary }}>View</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        ))}
-      </View>
+      {}
     </ScrollView>
   );
 }

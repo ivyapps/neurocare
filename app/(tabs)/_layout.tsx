@@ -15,15 +15,16 @@ export default function TabLayout() {
       // Make home the first tab:
       initialRouteName="index"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint, // Teal color from logo
         tabBarInactiveTintColor: '#9ca3af',
         tabBarStyle: styles.tabBar,
         tabBarLabelStyle: styles.tabBarLabel,
         headerStyle: {
-          backgroundColor: '#fff',
+          backgroundColor: '#E5F1F1', // Light teal background matching the logo
         },
         headerTitleStyle: {
           fontWeight: 'bold',
+          color: '#4A969B', // Teal color for header text
         },
         // Use your custom header component
         header: () => <AppHeader />,
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: '#fff',
     borderTopWidth: 1,
-    borderTopColor: '#f1f5f9',
+    borderTopColor: '#E5F1F1', // Light teal border matching brand colors
     paddingTop: 5,
     paddingBottom: 5,
   },

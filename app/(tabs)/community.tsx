@@ -28,19 +28,19 @@ export default function CommunityScreen() {
 
   const successStories = [
     {
+      title: "Soli's Journey",
+      description: "Finding strength through community support",
+      image: require('../../assets/images/stories/ndifon.png')
+    },
+    {
       title: "The Ndifon Family",
       description: "How they helped their child thrive in school",
-      image: "https://picsum.photos/400/200"
+      image: require('../../assets/images/stories/ndifon.png')
     },
     {
-      title: "Adama's Journey",
+      title: "Eposi's Progress",
       description: "From non-verbal to confident communicator",
-      image: "https://picsum.photos/200/150"
-    },
-    {
-      title: "Bella's Progress",
-      description: "Finding strength through community support",
-      image: "https://picsum.photos/200/150"
+      image: require('../../assets/images/stories/eposi.png')
     }
   ];
 
@@ -90,7 +90,7 @@ export default function CommunityScreen() {
         </View>
 
         {/* Featured Story */}
-        <View style={styles.featuredStoryContainer}>
+        {/* <View style={styles.featuredStoryContainer}>
           <ImageBackground
             source={{ uri: successStories[0].image }}
             style={styles.featuredStoryImage}
@@ -104,14 +104,15 @@ export default function CommunityScreen() {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-        </View>
+        </View> */}
 
         {/* Story Grid */}
         <View style={styles.storyGrid}>
           {successStories.slice(1).map((story, index) => (
             <View key={index} style={[styles.storyGridItem, { backgroundColor: colors.cardBackground }]}>
               <ImageBackground
-                source={{ uri: story.image }}
+                // source={{ uri: story.image }}
+                source={story.image}
                 style={styles.storyGridImage}
               />
               <View style={styles.storyGridContent}>

@@ -93,7 +93,7 @@ export default function ActivitiesScreen() {
       </ScrollView>
 
       {/* Featured Activity */}
-      <View style={styles.featuredActivityContainer}>
+      {/* <View style={styles.featuredActivityContainer}>
         <View style={styles.featuredActivity}>
           <View style={styles.featuredHeader}>
             <View style={[styles.featuredBadge, { backgroundColor: '#fff' }]}>
@@ -116,7 +116,7 @@ export default function ActivitiesScreen() {
             <Text style={[styles.featuredButtonText, { color: colors.primary }]}>Start Activity</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
 
       {/* Activity List */}
       <View style={styles.activitiesContainer}>

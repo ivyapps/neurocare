@@ -1,28 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-interface AppHeaderProps {
-  // You can add props if needed
-}
-
-const AppHeader: React.FC<AppHeaderProps> = () => {
+const AppHeader: React.FC = () => {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <View style={styles.header}>
         <View style={styles.headerLeft}>
-          <View style={styles.logoContainer}>
-            <Text style={styles.logoText}>N</Text>
-          </View>
-          <Text style={styles.appTitle}>NeuroCare</Text>
+          {/* Logo only - no text */}
+          <Image
+            source={require('../assets/images/logo.png')}
+            style={styles.logoImage}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.headerRight}>
           <TouchableOpacity style={styles.iconButton}>
-            <Feather name="search" size={22} color="#666" />
+            <Feather name="search" size={22} color="#4A969B" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconButton}>
-            <Feather name="bell" size={22} color="#666" />
+            <Feather name="bell" size={22} color="#4A969B" />
           </TouchableOpacity>
         </View>
       </View>
@@ -32,7 +30,7 @@ const AppHeader: React.FC<AppHeaderProps> = () => {
 
 const styles = StyleSheet.create({
   safeArea: {
-    backgroundColor: '#fff',
+    backgroundColor: '#E5F1F1', // Light teal background matching the logo background
   },
   header: {
     flexDirection: 'row',
@@ -40,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: '#E5F1F1', // Light teal background matching the logo background
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.05,
@@ -52,24 +50,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  logoContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: '#3b82f6',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 8,
-  },
-  logoText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  appTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#1f2937',
+  logoImage: {
+    width: 50,
+    height: 50,
   },
   headerRight: {
     flexDirection: 'row',
