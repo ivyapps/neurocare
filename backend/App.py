@@ -1,5 +1,5 @@
 import firebase_admin
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from firebase_admin import credentials, firestore
 
@@ -9,15 +9,10 @@ CORS(app)
 cred = credentials.Certificate("service_file.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
-
-try:
-      db_ref = db.collection("questions").document("question1")
-      db_ref.set({"question" : 1, "text" : "Do you have intense interests in specific topics that others might find unusual or obsessive?"})
-
-      db_ref1 = db.collection("questions").document("question2")
-      db_ref1.set({"id" : 2, "text" : "How old are you?"})
-except Exception as e:
-    print(f"Error: {e}")
+    
+@app.route("/")
+def home():
+    return "Welcome to the Neurocare API!"
 
 @app.route("/api/question", methods=['GET'])
 def get_questions():
@@ -26,6 +21,21 @@ def get_questions():
 
     all_questions = list(map(lambda doc: doc.to_dict(), docs))  #change it in such a way that it gets just the text part of the message
     return jsonify(all_questions)
+
+@app.route('/api/response', methods=['POST'])
+def responses():
+    data = request.get_json()
+    
+    if not data:
+        return jsonify({"error" : "No data received"}), 400
+    
+    try:
+        doc_ref = db.collection('user_responses').add(data)[0]
+        return jsonify({"success" : True}), 200     # "document_id" : doc_ref.id could be added at some point if needed. It helps the frontend get access to the different responses that are found within firestore
+    
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        return jsonify({"error" : str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
