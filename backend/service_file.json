@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "neurocare-81a10",
+  "private_key_id": "290325be18f98c440c0d326e172eab4022db06c3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC9+5CfpP1IAdhU\n3ZYw+TxXnsRs6G8oF7qnt6+owVZTQr3AGdZLB7/oxlQOLdecW6HdqjQ68bEtEeHQ\nJ6KjiBL+hEU92lFIAbCCLzn+HowEa4yGXCZTC4c/udztWUl+S7gpAk4GKIDFINr+\ndPhovwl/bTpzuApkdVbedgwQHdwtIgsGX47nCQn5wxlIo82LUCyNISmAcwHnLLpb\ngk8cXXKeia5xDeIT3dQpwU4eGq05SE2M+6GsZwf1CnouYVfazGk3/d/v85yyAzsH\nKq2DQzrNlxI9YLMq6eFdRSZEmDNvJXwnUkv+ijSQtz5Byj3Y7KA9bMuatuuQCRHb\nxT5doWXVAgMBAAECggEAEOf6DrrX7zh6z9KIMwN64zE1uZtViPPToGkwMIxD6lTe\nHeIut66Q3V4IzNo3faqJ1Pf4feZUJfaZabSdPIA3cH7EyqRK52V/F5asSnjdbOdF\nMg+xOWKlPn6Dsntnlt2WHdAesV2ZV/F8i3hNQsT9S2Gk+fc+tYHboSBQIn8FwN5H\nYnXeFq1DLIgmCtavxRr//mw9ioeSWhlPkGpZIboAzp3WvApspUoaH1o9w/k/JCEu\nlbvwO1OVqOtGAJlThq0cNeAoarza0pWUJ59h5AVW/DHARDA6y7IoJIgMqUM7R8CO\nrZW4mmzOJfiWQaRcKgd65galPwmq+GHriyQ1RBCRAQKBgQDmwMOOoefhFrNFWNuH\n+fO/3816uESYq9CMQpfygy1obsxK/kdZoH8Q2dvmNmHb+YyqjKV89/jja3jvXS0e\nis47xLDoEBPYv1dJEoVQsjSeRyimFK/qFOe7MmukXD0F8rIKIUqiSf3Mrv09PgoT\nyterk90nTJLMz+417uqtM3zBOQKBgQDSxNoiIjeNl8Q21ZakkT1MTq1oQGgjoK+v\nQCmA8NdvS4qV7wmTWXBY2E7h1o7kU7w4S2AQuHoKAJKkoi1e4xp+yjK0rLk+h4xl\nQsz6Vzx7crvVmWSgh5Gbg6+qldY8znSRW99bvXD9W0kYGADgB5nU0NLsC3ecBtNm\naeE4qKh1fQKBgC1cSVT5iM6bmsQQEp+pR/w473inTnzAka9wy9PVa5Cy7x/y2m3I\n+hGC8hJQMG6AoOFJ4qItUNTL5KsRIvR1DtN699e2iWA7RNpNdL2HOoa+sEPtnyMh\n1ufaooRdyXUo30zUfIpohya8Y3Wtg2eeoUTOPVQjXlw6p7YccC96BpUpAoGAYQPH\nPCrv0zbmVC8gNgO8aWFVpETxKmUOOOaZtAYnw8zLr5PlnnNuqRZ3yLAP+b0pR+g6\nAbhIRE5bMXiM1b5HNdEwYcWXRtbxorKK0zhQWKpJF1qR3OpJ9YE53JU3lamaMkZN\nm1apqZTZIkP6MySMhE7Sp1/n4GOr7toRlxja4akCgYEAgyKtOAmJhAfGSpZOGXo6\nxSdOk+3QD3jAoWG4F5TdhQQQ5Wi07lqWoLHhkBBk8KqYwIM8n+swyofCb1sP8N+Y\nNtLfN8a2A331jsRrfwcCZb/PndzXgFXvuooOY6wzkA6UfTbiiVHmHMcT5h5U1OM3\ncY3eVjdRAh8Da/m5vhbNBog=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@neurocare-81a10.iam.gserviceaccount.com",
+  "client_id": "108229666010888188717",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40neurocare-81a10.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

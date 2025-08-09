@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "neville-neurocare",
+  "private_key_id": "6cba823e68365ab824e3dd9c7631cf88876c6b1f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwwj4LBeQ4Pi//\nHN4iAS4DUMzJfJslLSEA8w6f9EJbDsjnq54kJSn1NtC35LsG/R1l1mhTH/SXPvxt\nwxaaG+prYCTt6OXtUW5AfZB/2TaVk/kzt05dqzC2NR6phUmx388wiNnSV999gaoC\nXQcGbc4cMUk9ZMPrao+QXmHUBHmxpM5bvZCr2jks01vcrDOWkisMATuEk8mTQ3GX\nmRWH5HTCtFLvETsSjhUxHCygyWFuf6M5C7t+0EkYnmcS0wu/SQUAsZHgfPwqj6+a\njFMHKHyBbJTirWq4rAHV+m+pdyUg45CB1q8cfU2jNw19KblgYeZcCsQSJxV0nmW6\nBiLqZWQPAgMBAAECggEANFq8TMCIef41ci9HPjQyQEoo9g8B1w+YZHMZpFgRZW4q\nJLCI7TTSyi5bwPQvT2EeWYEZsnFXHYtK8mnj4m6dTwORvKQMom/Jo7FtYOjiCYjk\nOaS0QftIONfgBp8Tlmtvr3UBa5Oaf06uH/gU8hsI/wG8K0KS40JTVpQWDtnqf6qO\nQid63eTQjjayPt8mTG90Yp5DdJQ2KnjhCzB0qBZ2hNpf4+S5rRj8wwweOGqNzzLu\nHoW7RLjzGAlzSppqY/CgCRS6ECFxcuhe47HKTQqins4oyQsz5MFoLr/uPhO6yyEU\nwr5RNGgCzQT/+1y93dvoUoqKm5yD92rvjy8lYyxd5QKBgQDgQjxWyQZNOwZVAG3w\nuaK8qTUfIr3eXZteMEewKj8wQ9pSdCoASX5Nky9Ktz22BcnVwDeZx1X3EAeN1xjk\nPCQ1SiTBbAFiMwxYiqQGqcBgs89M7V2mOQgfG6vUuqhpM24M9ZEmrZJbEIcCE0MC\nvu+XrcOZ1AZ1Ps3je1XCB31GzQKBgQDJxuXzG36YeGh36E/JLqo4/jyEsEhXfNu4\nU3GM7D1pAlMhiE0APvXyOiBTV6LJBqxvVhR/sFcXSZsVjgZGoaQW88dcWxbRNq38\ngWbHR6Cft69/yzco08oKHlE0Dy2SNYHOfBvOfexFLQ54l8QvHYyTWFb9HHM6a0e4\n95bl77w+SwKBgEWUh4At0yS3QZmyDmp4ToPWxEKq1tpdlM0+kZ+ZHA3vn5ehrz5z\njxqmpi+6dw048oy9nQK7lHKZqJ5btL9r4ZgfLxRMXImJaTU3nvjqRmQ6pgEqTLo8\nS8bLIR9Z4tLxQB4JO0YS6KwUjq8YJtx9PX2EToI2BOLv35XLOKqBBF+pAoGAaHFm\n556sublhwedjHSzleZjHtJsW5wo/JTs0BJDn/KnyY+IMkXsFjbteriUnosyshvjU\npX+epPQ5rT+VqgvTRvoqkHip5+NYzeIhVDeUQfgvhIOo6p4t72zf9YWBvjOqHDqL\nnif6G5iF7BAKwaSW9lH8vQlz76JGPs0Rs7WTB98CgYANhngZ8oV5FGBEGq85RDA2\nW4kZ7hzzNUpD6dLW/frG9HY/qQHngtYOAYlyqgFV5mAJuHnHka0cygNHAKYOdNi7\nNrxcN+Z6nE1mbhZ3XaYbVVK0kB5l550Gaq0jmGrG+FxvmXI7VP/cweHuHGwT68ne\nmi15dfuvJ3Vp2Ev/vbLHEQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@neville-neurocare.iam.gserviceaccount.com",
+  "client_id": "103710701137273161327",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40neville-neurocare.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
